@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saurabh Gaur — Android Developer Portfolio</title>
+    <meta name="description" content="Professional portfolio of Saurabh Gaur, Android Developer with 1.4 years of experience at Appsinvo Pvt. Ltd., specializing in Kotlin, Jetpack Compose, MVVM, and Clean Architecture.">
+    <meta name="theme-color" content="#0b0f19">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">SG<span>.dev</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-glow"></div>
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <span class="status-dot"></span> Available for Opportunities
+                </div>
+                <h1>Hi, I'm an <span class="gradient-text">Android Developer</span></h1>
+                <p class="hero-subtitle">Building reliable Android applications with Kotlin and modern Android technologies. Currently engineering high-performance mobile solutions at Appsinvo Pvt. Ltd. with 1.4 years of professional experience.</p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Explore Projects</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener">Download Resume</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>About Me</h2>
+                    <p>Professional background & engineering philosophy</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <h3>Professional Profile</h3>
+                        <p>I am an Android Developer with 1.4 years of professional experience specializing in native mobile application development at <strong>Appsinvo Pvt. Ltd.</strong> My technical expertise centers around robust architecture design, clean code practices, and building seamless user experiences.</p>
+                        <p>Throughout my career, I have successfully integrated complex REST APIs, real-time communication protocols, secure payment gateways, and advanced third-party SDKs into production-grade applications. I emphasize offline-first architecture using Room database, reactive data streams with Coroutines and Flow, and modern UI implementation via Jetpack Compose and XML.</p>
+                    </div>
+                    <div class="expertise-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🏗️</div>
+                            <h4>App Architecture</h4>
+                            <p>Designing scalable applications using MVVM and Clean Architecture patterns for long-term maintainability.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">⚡</div>
+                            <h4>Real-Time & Sync</h4>
+                            <p>Implementing live tracking, messaging, and data syncing via Socket.IO, WebSockets, and Firebase Cloud Messaging.</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🔌</div>
+                            <h4>Robust Integrations</h4>
+                            <p>Integrating Google Maps SDK, Agora RTC/RTM audio-video streaming, secure payment gateways, and RESTful APIs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Technical Skills</h2>
+                    <p>Core technologies and tools I use to build production-grade apps</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category-card">
+                        <h3>Languages</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>UI Development</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Jetpack Compose</span>
+                            <span class="skill-tag">XML Layouts</span>
+                            <span class="skill-tag">Material Design</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>Architecture & Core</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">MVVM</span>
+                            <span class="skill-tag">Clean Architecture</span>
+                            <span class="skill-tag">Android Jetpack</span>
+                            <span class="skill-tag">Coroutines</span>
+                            <span class="skill-tag">Flow</span>
+                            <span class="skill-tag">Hilt (DI)</span>
+                            <span class="skill-tag">Room DB</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>Networking & Storage</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Retrofit</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Socket.IO</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>Firebase Ecosystem</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Firebase Auth</span>
+                            <span class="skill-tag">Cloud Messaging (FCM)</span>
+                            <span class="skill-tag">Crashlytics</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>SDKs & Integrations</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Google Maps SDK</span>
+                            <span class="skill-tag">Agora RTC / RTM</span>
+                            <span class="skill-tag">Payment Gateways</span>
+                        </div>
+                    </div>
+                    <div class="skill-category-card">
+                        <h3>Development Tools</h3>
+                        <div class="tag-cloud">
+                            <span class="skill-tag">Android Studio</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Professional Experience</h2>
+                    <p>My career journey in Android development</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>Android Developer</h3>
+                                    <h4 class="company-name">Appsinvo Pvt. Ltd.</h4>
+                                </div>
+                                <span class="badge-duration">1.4 Years Experience</span>
+                            </div>
+                            <p class="timeline-desc">Developing, maintaining, and scaling feature-rich native Android applications for diverse client requirements in production environments.</p>
+                            <ul class="experience-bullets">
+                                <li>Designed and implemented modular Android features using Kotlin, Jetpack Compose, and XML layouts following clean architecture standards.</li>
+                                <li>Integrated secure REST APIs, real-time Socket.IO communications, and third-party SDKs (Google Maps, Agora RTC/RTM, payment gateways).</li>
+                                <li>Utilized Android Jetpack libraries (ViewModel, Navigation Component, Room, Coroutines, Flow, Hilt) to ensure reactive, robust, and crash-free app lifecycles.</li>
+                                <li>Collaborated closely with cross-functional product, design, and backend teams to deliver high-performance applications on Google Play.</li>
+                                <li>Diagnosed and resolved critical performance bottlenecks, memory leaks, and production bugs reported via Firebase Crashlytics.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="section section-dark">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Professional client implementations and personal engineering work</p>
+                </div>
+                <div class="projects-grid">
+
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>AI-Powered Vital Analytics & Decision Support App</h3>
+                        </div>
+                        <p class="project-desc">Advanced health analytics mobile application featuring camera-based PPG acquisition and signal analysis, vital-sign & heart-rate insights, stress/recovery analysis, and intelligent decision-support functionality.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>CameraX</span>
+                            <span>ML Kit</span>
+                            <span>Hilt</span>
+                            <span>Coroutines/Flow</span>
+                            <span>Retrofit</span>
+                            <span>Room</span>
+                            <span>Paging 3</span>
+                            <span>Google Play Billing</span>
+                            <span>AWS S3</span>
+                        </div>
+                        <div class="disclaimer-note">
+                            <small><em>Disclaimer: Medical insights and analytics provided by the application are for informational purposes. Proprietary source code is confidential.</em></small>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Multi-Service On-Demand Platform</h3>
+                        </div>
+                        <p class="project-desc">Comprehensive multi-module on-demand service ecosystem comprising separate User and Driver client applications. Features live ride-booking workflows, pharmacy medicine ordering, and doctor consultations.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Retrofit</span>
+                            <span>Socket.IO</span>
+                            <span>Google Maps SDK</span>
+                            <span>FCM</span>
+                            <span>Room</span>
+                            <span>Payment Gateway</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Print & Stationery E-Commerce App</h3>
+                        </div>
+                        <p class="project-desc">Digital e-commerce and utility platform enabling seamless print service selection, multi-format document uploads, custom stationery catalog browsing, and secure order tracking & payment workflows.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Retrofit</span>
+                            <span>Firebase Auth</span>
+                            <span>Room</span>
+                            <span>Payment Gateway</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Phone Clone App</h3>
+                        </div>
+                        <p class="project-desc">High-speed device-to-device data migration utility enabling direct peer-to-peer file and contact transfer without internet dependency, utilizing secure local Wi-Fi Direct and AES encryption protocols.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Wi-Fi Direct</span>
+                            <span>AES Encryption</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Trip Booking App</h3>
+                        </div>
+                        <p class="project-desc">End-to-end travel and itinerary management application supporting seamless tour package exploration, booking management, and integrated payment processing.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Retrofit</span>
+                            <span>REST APIs</span>
+                            <span>Room</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Quick-Commerce Grocery Delivery App</h3>
+                        </div>
+                        <p class="project-desc">High-frequency grocery and daily essentials ordering platform featuring catalog search, live cart management, rapid checkout flows, and real-time order status tracking.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Retrofit</span>
+                            <span>WebSockets</span>
+                            <span>Payment Gateway</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 7 -->
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type professional">Professional Client Project</span>
+                            <h3>Enterprise Workforce Management Platform</h3>
+                        </div>
+                        <p class="project-desc">Multi-module enterprise solution engineered for organizational workforce tracking, operational coordination, and secure internal communication across distributed teams.</p>
+                        <div class="tech-stack">
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                            <span>Clean Architecture</span>
+                            <span>Retrofit</span>
+                            <span>Room</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Get In Touch</h2>
+                    <p>Let's connect for Android development opportunities</p>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-intro">I am actively looking for new opportunities as an Android Developer where I can contribute my technical expertise and build exceptional mobile products. Feel free to reach out via email or LinkedIn.</p>
+                    <div class="contact-links">
+                        <a href="mailto:your-email@example.com" class="contact-btn">
+                            <span>📧</span> your-email@example.com
+                        </a>
+                        <a href="https://linkedin.com/in/your-username" class="contact-btn" target="_blank" rel="noopener">
+                            <span>💼</span> LinkedIn Profile
+                        </a>
+                        <a href="https://github.com/your-username" class="contact-btn" target="_blank" rel="noopener">
+                            <span>🐙</span> GitHub Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; <span id="currentYear">2026</span> Saurabh Gaur. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
