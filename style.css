@@ -5,12 +5,11 @@
 :root {
     --bg-base: #070913;
     --bg-surface: #0d1222;
-    --bg-elevated: rgba(19, 27, 46, 0.72);
+    --bg-elevated: rgba(19, 27, 46, 0.74);
     --bg-elevated-solid: #131b2e;
-    --bg-glass: rgba(15, 22, 38, 0.75);
 
-    --border-subtle: rgba(148, 163, 184, 0.12);
-    --border-highlight: rgba(99, 102, 241, 0.45);
+    --border-subtle: rgba(148, 163, 184, 0.13);
+    --border-highlight: rgba(99, 102, 241, 0.48);
 
     --text-primary: #f8fafc;
     --text-secondary: #cbd5e1;
@@ -61,6 +60,10 @@ body {
     position: relative;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
 /* Keyboard Skip Link */
 .skip-link {
     position: absolute;
@@ -70,7 +73,7 @@ body {
     color: #fff;
     padding: 0.6rem 1.2rem;
     border-radius: var(--radius-sm);
-    z-index: 2000;
+    z-index: 2100;
     text-decoration: none;
     font-weight: 600;
     transition: top 0.2s ease;
@@ -80,11 +83,31 @@ body {
     top: 1rem;
 }
 
-/* Focus Visibility */
+/* Focus States */
 a:focus-visible,
 button:focus-visible {
     outline: 2px solid var(--accent-cyan);
     outline-offset: 3px;
+}
+
+/* Top Scroll Progress Bar */
+.scroll-progress-track {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 1200;
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-primary);
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.6);
+    transition: width 0.08s linear;
 }
 
 /* Ambient Background Grid & Glows */
@@ -107,7 +130,7 @@ button:focus-visible {
     height: 520px;
     border-radius: 50%;
     filter: blur(130px);
-    opacity: 0.16;
+    opacity: 0.15;
     pointer-events: none;
     z-index: -1;
 }
@@ -138,7 +161,7 @@ button:focus-visible {
 }
 
 .section-alt {
-    background-color: rgba(13, 18, 34, 0.65);
+    background-color: rgba(13, 18, 34, 0.68);
     border-top: 1px solid var(--border-subtle);
     border-bottom: 1px solid var(--border-subtle);
 }
@@ -157,7 +180,7 @@ button:focus-visible {
 /* Section Headings */
 .section-heading {
     max-width: 680px;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 
 .section-eyebrow {
@@ -185,7 +208,7 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Navigation Bar
+   Navigation Bar & Mobile Backdrop
    ========================================================================== */
 .site-header {
     position: fixed;
@@ -202,7 +225,7 @@ button:focus-visible {
 }
 
 .site-header.scrolled {
-    background: rgba(7, 9, 19, 0.94);
+    background: rgba(7, 9, 19, 0.95);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
 }
 
@@ -285,7 +308,6 @@ button:focus-visible {
     color: #ffffff;
 }
 
-/* Mobile Menu Button */
 .mobile-menu-toggle {
     display: none;
     width: 42px;
@@ -321,8 +343,25 @@ button:focus-visible {
     transform: translateY(-7px) rotate(-45deg);
 }
 
+.nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 950;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* ==========================================================================
-   Hero Section
+   Hero Section & Interactive Architecture Preview
    ========================================================================== */
 .hero-section {
     min-height: 100vh;
@@ -335,8 +374,8 @@ button:focus-visible {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3.5rem;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: 3.25rem;
     align-items: center;
 }
 
@@ -372,7 +411,7 @@ button:focus-visible {
 }
 
 .hero-title {
-    font-size: clamp(2.25rem, 4.8vw, 3.75rem);
+    font-size: clamp(2.25rem, 4.8vw, 3.7rem);
     font-weight: 800;
     line-height: 1.12;
     letter-spacing: -0.03em;
@@ -388,14 +427,14 @@ button:focus-visible {
 
 .hero-role-subtitle {
     display: block;
-    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    font-size: clamp(1.35rem, 2.5vw, 1.95rem);
     font-weight: 600;
     color: var(--text-secondary);
     margin-top: 0.35rem;
 }
 
 .hero-description {
-    font-size: clamp(1rem, 1.4vw, 1.12rem);
+    font-size: clamp(1rem, 1.35vw, 1.1rem);
     color: var(--text-secondary);
     max-width: 600px;
     margin-bottom: 2rem;
@@ -406,7 +445,6 @@ button:focus-visible {
     font-weight: 600;
 }
 
-/* Buttons */
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -478,10 +516,10 @@ button:focus-visible {
     transform: translateY(-2px);
 }
 
-/* Hero Visual Android Frame */
+/* Android Device Frame & Interactive Tabs */
 .android-device-frame {
-    background: linear-gradient(160deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.92));
-    border: 1px solid rgba(148, 163, 184, 0.2);
+    background: linear-gradient(160deg, rgba(30, 41, 59, 0.82), rgba(15, 23, 42, 0.94));
+    border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: var(--radius-lg);
     padding: 1.25rem;
     box-shadow: var(--shadow-card), 0 0 60px -15px rgba(99, 102, 241, 0.25);
@@ -491,9 +529,9 @@ button:focus-visible {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0.4rem 0.85rem;
+    padding: 0 0.4rem 0.8rem;
     border-bottom: 1px solid var(--border-subtle);
-    margin-bottom: 1rem;
+    margin-bottom: 0.95rem;
     font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
@@ -524,16 +562,22 @@ button:focus-visible {
     border: 1px solid var(--border-subtle);
     border-radius: var(--radius-sm);
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 0.9rem;
 }
 
 .code-card-header {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-content: space-between;
     padding: 0.55rem 0.85rem;
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border-subtle);
+}
+
+.window-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .dot {
@@ -547,32 +591,42 @@ button:focus-visible {
 .dot-green { background: #10b981; }
 
 .code-filename {
-    margin-left: 0.4rem;
     font-family: var(--font-mono);
     font-size: 0.74rem;
-    color: var(--text-muted);
+    color: var(--accent-cyan);
 }
 
 .code-snippet {
     padding: 1rem;
     font-family: var(--font-mono);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     line-height: 1.55;
     color: #e2e8f0;
     overflow-x: auto;
+    min-height: 195px;
+    transition: opacity 0.18s ease;
 }
 
 .code-snippet .kw { color: #c084fc; }
 .code-snippet .cls { color: #38bdf8; }
 .code-snippet .fn { color: #818cf8; }
 
+.arch-layer-Prompt {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    padding-left: 0.2rem;
+}
+
 .arch-layers {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 0.55rem;
 }
 
 .arch-pill {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -581,7 +635,23 @@ button:focus-visible {
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-subtle);
+    font-family: var(--font-sans);
     font-size: 0.8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-align: left;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.arch-pill:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.arch-pill.active {
+    background: rgba(99, 102, 241, 0.16);
+    border-color: var(--accent-cyan);
+    box-shadow: inset 3px 0 0 var(--accent-cyan);
 }
 
 .arch-tag {
@@ -594,11 +664,12 @@ button:focus-visible {
 .arch-val {
     color: var(--text-secondary);
     text-align: right;
+    font-size: 0.78rem;
 }
 
 /* Scroll Cue */
 .scroll-cue {
-    margin: 3rem auto 0;
+    margin: 2.75rem auto 0;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -640,13 +711,14 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   About Section
+   About & Core Expertise Section
    ========================================================================== */
 .about-layout {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 2rem;
     align-items: stretch;
+    margin-bottom: 2rem;
 }
 
 .about-narrative {
@@ -714,6 +786,37 @@ button:focus-visible {
     font-size: 0.9rem;
     color: var(--text-muted);
     line-height: 1.55;
+}
+
+/* Core Expertise Strip */
+.expertise-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+}
+
+.expertise-mini-card {
+    padding: 0.9rem 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.expertise-mini-card:hover {
+    border-color: var(--border-highlight);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+.exp-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    flex-shrink: 0;
 }
 
 /* ==========================================================================
@@ -794,8 +897,52 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Projects Section
+   Projects Section & Category Filter Bar
    ========================================================================== */
+.project-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 2.25rem;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.05rem;
+    border-radius: 999px;
+    background: rgba(19, 27, 46, 0.7);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-primary);
+    border-color: rgba(99, 102, 241, 0.4);
+}
+
+.filter-btn.active {
+    background: var(--gradient-primary);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+
+.filter-count {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.25);
+    color: inherit;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -807,6 +954,11 @@ button:focus-visible {
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    transition: transform 0.28s ease, opacity 0.28s ease, border-color 0.28s ease;
+}
+
+.project-card.is-hidden {
+    display: none;
 }
 
 .project-card::before {
@@ -1108,7 +1260,7 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Contact Section
+   Contact Section & Copy Email Action
    ========================================================================== */
 .contact-panel {
     padding: 2.75rem;
@@ -1130,24 +1282,35 @@ button:focus-visible {
     margin-bottom: 1.5rem;
 }
 
-.direct-email-display {
-    display: inline-flex;
+.direct-email-box {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.65rem 1rem;
+    justify-content: space-between;
+    gap: 0.85rem;
+    padding: 0.85rem 1.1rem;
     border-radius: var(--radius-sm);
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-subtle);
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
+}
+
+.direct-email-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
 }
 
 .email-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
     color: var(--text-muted);
 }
 
 .email-address {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
     color: var(--accent-cyan);
     text-decoration: none;
     font-weight: 600;
@@ -1155,6 +1318,34 @@ button:focus-visible {
 
 .email-address:hover {
     text-decoration: underline;
+}
+
+.copy-email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    background: rgba(99, 102, 241, 0.16);
+    border: 1px solid rgba(99, 102, 241, 0.38);
+    color: #e0e7ff;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.copy-email-btn:hover {
+    background: var(--accent-indigo);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.copy-email-btn.copied {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: var(--accent-emerald);
+    color: #a7f3d0;
 }
 
 .contact-actions-grid {
@@ -1221,7 +1412,7 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Footer & Back to Top
+   Footer, Toast Notification & Back to Top
    ========================================================================== */
 .site-footer {
     background: #05070f;
@@ -1297,6 +1488,34 @@ button:focus-visible {
     font-size: 0.84rem;
 }
 
+/* Status Toast Notification */
+.status-toast {
+    position: fixed;
+    bottom: 1.75rem;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: var(--bg-elevated-solid);
+    border: 1px solid var(--accent-cyan);
+    color: var(--text-primary);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.88rem;
+    font-weight: 500;
+    box-shadow: var(--shadow-card);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.status-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
 /* Back to Top */
 .back-to-top {
     position: fixed;
@@ -1331,12 +1550,12 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   Scroll Reveal Animations (Safe Fallback if JS is Disabled)
+   Scroll Reveal Animations (Progressive Enhancement via .js-enabled)
    ========================================================================== */
 .js-enabled .reveal-up {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--delay, 0s);
 }
 
@@ -1387,6 +1606,7 @@ button:focus-visible {
         visibility: hidden;
         transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, visibility 0.25s ease;
         box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
+        z-index: 1001;
     }
 
     .nav-links.active {
