@@ -150,7 +150,7 @@ button:focus-visible {
 /* Layout Containers */
 .container {
     width: 100%;
-    max-width: 1180px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -230,7 +230,7 @@ button:focus-visible {
 }
 
 .nav-container {
-    max-width: 1180px;
+    max-width: 1240px;
     height: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -374,8 +374,8 @@ button:focus-visible {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: 3.5rem;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 3rem;
     align-items: center;
 }
 
@@ -413,7 +413,10 @@ button:focus-visible {
 
 /* Static architecture overview card (hero, right column) */
 .stack-card {
-    padding: 1.35rem;
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    padding: 1.5rem;
     background: linear-gradient(160deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9));
     box-shadow: var(--shadow-card), 0 0 60px -15px rgba(99, 102, 241, 0.25);
 }
@@ -451,6 +454,7 @@ button:focus-visible {
 
 .stack-layers {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -458,6 +462,8 @@ button:focus-visible {
 }
 
 .stack-layer {
+    list-style: none;
+    margin: 0;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -494,14 +500,44 @@ button:focus-visible {
     color: var(--text-secondary);
 }
 
-.stack-foot {
+.stack-support {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.75rem;
     margin-top: 1.1rem;
-    padding-top: 0.9rem;
+    padding-top: 1rem;
     border-top: 1px dashed var(--border-subtle);
+}
+
+.stack-support-label {
     font-family: var(--font-mono);
-    font-size: 0.74rem;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
     color: var(--text-muted);
-    text-align: center;
+}
+
+.stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.stack-chips li {
+    list-style: none;
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    line-height: 1.2;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #e0e7ff;
 }
 
 .role-pill {
@@ -1688,6 +1724,11 @@ button:focus-visible {
         gap: 2.5rem;
     }
 
+    .stack-card {
+        max-width: none;
+        margin-left: 0;
+    }
+
     .hero-section {
         padding-top: calc(var(--nav-height) + 2rem);
     }
@@ -1761,8 +1802,13 @@ button:focus-visible {
 }
 
 @media (max-width: 480px) {
-    .container {
+    .container,
+    .hero-grid {
         padding: 0 1.15rem;
+    }
+
+    .stack-card {
+        padding: 1.15rem;
     }
 
     .hero-actions {
