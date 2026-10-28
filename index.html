@@ -77,6 +77,14 @@
                         Engineering reliable, production-grade Android applications with <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong>, and <strong>XML</strong>. Experienced in designing clean <strong>MVVM &amp; Clean Architecture</strong> codebases, real-time <strong>Socket.IO</strong> workflows, <strong>REST APIs</strong>, and third-party SDK integrations.
                     </p>
 
+                    <ul class="hero-tech" aria-label="Core technologies">
+                        <li>Kotlin</li>
+                        <li>Jetpack Compose</li>
+                        <li>MVVM</li>
+                        <li>Clean Architecture</li>
+                        <li>Android Jetpack</li>
+                    </ul>
+
                     <div class="hero-actions">
                         <a href="#projects" class="btn btn-primary">
                             <span>View My Projects</span>
@@ -117,62 +125,6 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Interactive Android Architecture Code Previewer (Synced with script.js) -->
-                <div class="hero-visual-column reveal-up" style="--delay: 0.12s;">
-                    <div class="android-device-frame" role="region" aria-label="Interactive Android Architecture Preview">
-                        <div class="device-statusbar">
-                            <span class="device-time">Android Studio &bull; Kotlin</span>
-                            <div class="device-indicators" aria-hidden="true">
-                                <span class="sig-bar"></span>
-                                <span class="sig-bar"></span>
-                                <span class="sig-battery"></span>
-                            </div>
-                        </div>
-
-                        <div class="device-screen">
-                            <div class="code-card">
-                                <div class="code-card-header">
-                                    <div class="window-dots" aria-hidden="true">
-                                        <span class="dot dot-red"></span>
-                                        <span class="dot dot-amber"></span>
-                                        <span class="dot dot-green"></span>
-                                    </div>
-                                    <span class="code-filename" id="archFilename">ProductionViewModel.kt</span>
-                                </div>
-                                <pre class="code-snippet" id="archCodeBlock" aria-live="polite"><code><span class="kw">@HiltViewModel</span>
-<span class="kw">class</span> <span class="cls">ProductionViewModel</span> <span class="kw">@Inject</span> <span class="fn">constructor</span>(
-    <span class="kw">private val</span> repository: <span class="cls">AppRepository</span>
-) : <span class="cls">ViewModel</span>() {
-
-    <span class="kw">val</span> uiState: <span class="cls">StateFlow</span>&lt;<span class="cls">UiState</span>&gt; =
-        repository.<span class="fn">observeDataStream</span>()
-            .<span class="fn">stateIn</span>(
-                scope = viewModelScope,
-                started = <span class="cls">SharingStarted</span>.WhileSubscribed(5000),
-                initialValue = <span class="cls">UiState</span>.Loading
-            )
-}</code></pre>
-                            </div>
-
-                            <div class="arch-layer-Prompt">Click a layer to inspect implementation:</div>
-                            <div class="arch-layers" role="tablist" aria-label="Android Architecture Layers">
-                                <button type="button" class="arch-pill" role="tab" aria-selected="false" data-layer="ui">
-                                    <span class="arch-tag">UI Layer</span>
-                                    <span class="arch-val">Jetpack Compose &amp; XML</span>
-                                </button>
-                                <button type="button" class="arch-pill active" role="tab" aria-selected="true" data-layer="domain">
-                                    <span class="arch-tag">Domain / State</span>
-                                    <span class="arch-val">MVVM &bull; Clean Arch &bull; Flow</span>
-                                </button>
-                                <button type="button" class="arch-pill" role="tab" aria-selected="false" data-layer="data">
-                                    <span class="arch-tag">Data &amp; Real-Time</span>
-                                    <span class="arch-val">Retrofit &bull; Room &bull; Socket.IO</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <a href="#about" class="scroll-cue" aria-label="Scroll down to About section">
@@ -196,10 +148,10 @@
                     <div class="about-narrative glass-card reveal-up">
                         <h3>Building Production-Ready Mobile Applications</h3>
                         <p>
-                            I am an Android Developer with <strong>1.5+ years of professional experience</strong> currently working at <strong>Appsinvo Pvt. Ltd.</strong> My day-to-day work focuses on developing and maintaining native Android applications using <strong>Kotlin</strong> and <strong>Java</strong>, crafting responsive user interfaces across both <strong>Jetpack Compose</strong> and <strong>XML layouts</strong>.
+                            I am an Android Developer with <strong>1.5+ years of professional experience</strong> currently working at <strong>Appsinvo Pvt. Ltd.</strong>, after starting out as an <strong>Android Developer Intern at Uptoskills</strong>. My day-to-day work focuses on developing and maintaining native Android applications using <strong>Kotlin</strong> and <strong>Java</strong>, crafting responsive user interfaces across both <strong>Jetpack Compose</strong> and <strong>XML layouts</strong>.
                         </p>
                         <p>
-                            I have contributed to applications spanning ride booking, healthcare, pharmacy medicine ordering, doctor consultations, e-commerce print and stationery workflows, device-to-device data transfer, and travel booking. I structure applications around <strong>MVVM</strong> and <strong>Clean Architecture</strong> so features remain modular, maintainable, and resilient across releases.
+                            I have contributed to applications spanning ride booking, healthcare, pharmacy medicine ordering, doctor consultations, e-commerce print and stationery workflows, device-to-device data transfer, and travel booking, alongside personal projects such as a weather app and a notes app. I structure applications around <strong>MVVM</strong> and <strong>Clean Architecture</strong> so features remain modular, maintainable, and resilient across releases.
                         </p>
                         <p>
                             My responsibilities cover REST API integration with <strong>Retrofit</strong>, offline persistence with <strong>Room Database</strong>, real-time event handling with <strong>Socket.IO</strong> and <strong>Agora RTC/RTM</strong>, location tracking with <strong>Google Maps SDK</strong>, push notifications via <strong>Firebase Cloud Messaging</strong>, payment gateway integration, performance debugging, and daily collaboration with backend developers, designers, and QA teams.
@@ -292,7 +244,6 @@
                 </div>
 
                 <div class="skills-grid">
-                    <!-- Category 1: Languages -->
                     <div class="skill-card glass-card reveal-up">
                         <div class="skill-card-head">
                             <span class="skill-icon" aria-hidden="true">
@@ -305,8 +256,6 @@
                             <span class="chip">Java</span>
                         </div>
                     </div>
-
-                    <!-- Category 2: Android Development -->
                     <div class="skill-card glass-card reveal-up" style="--delay: 0.05s;">
                         <div class="skill-card-head">
                             <span class="skill-icon" aria-hidden="true">
@@ -325,8 +274,6 @@
                             <span class="chip">ViewBinding</span>
                         </div>
                     </div>
-
-                    <!-- Category 3: Architecture & Async -->
                     <div class="skill-card glass-card reveal-up" style="--delay: 0.1s;">
                         <div class="skill-card-head">
                             <span class="skill-icon" aria-hidden="true">
@@ -339,41 +286,47 @@
                             <span class="chip chip-primary">Clean Architecture</span>
                             <span class="chip">Kotlin Coroutines</span>
                             <span class="chip">StateFlow &amp; SharedFlow</span>
+                            <span class="chip">Hilt</span>
                         </div>
                     </div>
-
-                    <!-- Category 4: Networking & Data -->
                     <div class="skill-card glass-card reveal-up" style="--delay: 0.15s;">
                         <div class="skill-card-head">
                             <span class="skill-icon" aria-hidden="true">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
                             </span>
-                            <h3>Networking &amp; Data</h3>
+                            <h3>Networking &amp; Storage</h3>
                         </div>
                         <div class="skill-chips">
                             <span class="chip chip-primary">Retrofit</span>
                             <span class="chip">REST APIs</span>
                             <span class="chip chip-primary">Room Database</span>
                             <span class="chip">Firebase</span>
-                            <span class="chip">Socket.IO</span>
                         </div>
                     </div>
-
-                    <!-- Category 5: Integrations & Tools -->
-                    <div class="skill-card glass-card skill-card-wide reveal-up" style="--delay: 0.2s;">
+                    <div class="skill-card glass-card reveal-up" style="--delay: 0.2s;">
                         <div class="skill-card-head">
                             <span class="skill-icon" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                             </span>
-                            <h3>Integrations &amp; Tools</h3>
+                            <h3>Real-Time &amp; Integrations</h3>
                         </div>
                         <div class="skill-chips">
-                            <span class="chip chip-primary">Hilt</span>
+                            <span class="chip">Socket.IO</span>
                             <span class="chip">Google Maps SDK</span>
                             <span class="chip">Firebase Cloud Messaging (FCM)</span>
                             <span class="chip">Firebase Crashlytics</span>
                             <span class="chip">Payment Gateway Integration</span>
                             <span class="chip">Agora RTC &amp; RTM</span>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card reveal-up" style="--delay: 0.25s;">
+                        <div class="skill-card-head">
+                            <span class="skill-icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            </span>
+                            <h3>Tools</h3>
+                        </div>
+                        <div class="skill-chips">
                             <span class="chip">Android Studio</span>
                             <span class="chip">Git &amp; GitHub</span>
                         </div>
@@ -394,16 +347,16 @@
                 <!-- Project Category Filter Bar -->
                 <div class="project-filter-bar reveal-up" role="toolbar" aria-label="Filter projects by category">
                     <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
-                        All Projects <span class="filter-count">8</span>
+                        All Projects
                     </button>
                     <button type="button" class="filter-btn" data-filter="client" aria-pressed="false">
-                        Client Production <span class="filter-count">6</span>
+                        Client Production
                     </button>
                     <button type="button" class="filter-btn" data-filter="realtime" aria-pressed="false">
-                        Real-Time &amp; SDKs <span class="filter-count">3</span>
+                        Real-Time &amp; SDKs
                     </button>
                     <button type="button" class="filter-btn" data-filter="personal" aria-pressed="false">
-                        Personal &amp; Architecture <span class="filter-count">2</span>
+                        Personal &amp; Architecture
                     </button>
                 </div>
 
@@ -656,6 +609,68 @@
                             </div>
                         </div>
                     </article>
+
+                    <!-- Project 9: Weather App -->
+                    <article class="project-card glass-card reveal-up" data-accent="cyan" data-category="personal">
+                        <div class="project-visual">
+                            <div class="visual-header">
+                                <span class="project-badge badge-personal">Personal Project</span>
+                                <span class="visual-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                                </span>
+                            </div>
+                            <div class="visual-art">
+                                <div class="wx-scene" aria-hidden="true">
+                                    <span class="wx-sun"></span>
+                                    <span class="wx-cloud"></span>
+                                </div>
+                                <span class="visual-caption">Weather Details &bull; Single Screen</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Weather App</h3>
+                            <p>
+                                Personal Android app that presents weather details on a single, focused screen with a clean mobile user experience.
+                            </p>
+                            <div class="project-tags">
+                                <span>Android</span>
+                                <span>Single-Screen UI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 10: Notes App -->
+                    <article class="project-card glass-card reveal-up" data-accent="violet" data-category="personal">
+                        <div class="project-visual">
+                            <div class="visual-header">
+                                <span class="project-badge badge-personal">Personal Project</span>
+                                <span class="visual-icon" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                </span>
+                            </div>
+                            <div class="visual-art">
+                                <div class="notes-scene" aria-hidden="true">
+                                    <span class="note-sheet"><i></i><i></i><i></i></span>
+                                    <svg class="note-scribble" width="46" height="26" viewBox="0 0 46 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18c5-12 8-12 11-2s6 10 10-2 7-10 10 0 5 6 9-4"></path></svg>
+                                    <span class="wave-bars"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+                                </div>
+                                <span class="visual-caption">Text &bull; Voice &bull; Drawing Notes</span>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Notes App</h3>
+                            <p>
+                                Personal Android notes app for capturing text notes, voice notes, and drawings. Notes are saved locally with Room and can be marked or unmarked as favorites, or deleted.
+                            </p>
+                            <div class="project-tags">
+                                <span>Room Database</span>
+                                <span>Text Notes</span>
+                                <span>Voice Notes</span>
+                                <span>Drawing</span>
+                                <span>Favorites</span>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
@@ -669,58 +684,89 @@
                     <p>Production Android engineering and cross-functional team collaboration.</p>
                 </div>
 
-                <div class="experience-wrapper reveal-up">
-                    <article class="experience-card glass-card">
-                        <div class="exp-top-bar">
-                            <div>
-                                <span class="exp-status-tag">Current Role</span>
-                                <h3 class="exp-role">Android Developer</h3>
-                                <p class="exp-company">Appsinvo Pvt. Ltd.</p>
+                <div class="experience-wrapper">
+                    <div class="experience-timeline">
+                        <div class="timeline-item reveal-up">
+                            <article class="experience-card glass-card">
+                            <div class="exp-top-bar">
+                                <div>
+                                    <span class="exp-status-tag">Current Role</span>
+                                    <h3 class="exp-role">Android Developer</h3>
+                                    <p class="exp-company">Appsinvo Pvt. Ltd.</p>
+                                </div>
+                                <div class="exp-meta">
+                                    <span class="exp-duration-pill">1.5+ Years Experience</span>
+                                </div>
                             </div>
-                            <div class="exp-meta">
-                                <span class="exp-duration-pill">1.5+ Years Experience</span>
+
+                            <p class="exp-summary">
+                                Developing and maintaining native Android applications across ride booking, healthcare, e-commerce, and utility domains, translating product requirements and backend APIs into reliable mobile features.
+                            </p>
+
+                            <ul class="exp-list">
+                                <li>
+                                    <strong>Application &amp; UI Engineering:</strong> Build responsive native screens and reusable UI components using <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong>, and <strong>XML layouts</strong> with ViewBinding and Material Design components.
+                                </li>
+                                <li>
+                                    <strong>Architecture &amp; State Management:</strong> Structure scalable application features using <strong>MVVM</strong> and <strong>Clean Architecture</strong> with ViewModel, LiveData, Kotlin Coroutines, StateFlow/SharedFlow, Navigation Component, and Hilt.
+                                </li>
+                                <li>
+                                    <strong>Networking &amp; Real-Time Communication:</strong> Integrate <strong>Retrofit REST APIs</strong>, <strong>Socket.IO</strong> event streams, and <strong>Agora RTC/RTM</strong> SDKs for live status updates and real-time communication.
+                                </li>
+                                <li>
+                                    <strong>Maps, Payments &amp; Local Persistence:</strong> Implement location features with <strong>Google Maps SDK</strong>, local persistence with <strong>Room Database</strong>, push notifications via <strong>Firebase Cloud Messaging</strong>, and payment gateway workflows.
+                                </li>
+                                <li>
+                                    <strong>Debugging &amp; Cross-Functional Delivery:</strong> Diagnose crashes and performance bottlenecks using Android Studio tools and <strong>Firebase Crashlytics</strong>, collaborating with backend developers, UI/UX designers, and QA teams.
+                                </li>
+                            </ul>
+
+                            <div class="exp-tech-footer">
+                                <span>Kotlin</span>
+                                <span>Java</span>
+                                <span>Jetpack Compose</span>
+                                <span>XML</span>
+                                <span>MVVM</span>
+                                <span>Clean Architecture</span>
+                                <span>Retrofit</span>
+                                <span>Socket.IO</span>
+                                <span>Room</span>
+                                <span>Firebase</span>
+                                <span>Google Maps SDK</span>
+                                <span>Agora RTC/RTM</span>
+                                <span>Hilt</span>
+                                <span>Git</span>
                             </div>
+                        </article>
                         </div>
 
-                        <p class="exp-summary">
-                            Developing and maintaining native Android applications across ride booking, healthcare, e-commerce, and utility domains, translating product requirements and backend APIs into reliable mobile features.
-                        </p>
+                        <div class="timeline-item reveal-up" style="--delay: 0.08s;">
+                            <article class="experience-card glass-card is-intern">
+                                <div class="exp-top-bar">
+                                    <div>
+                                        <span class="exp-status-tag is-past">Previous Role &bull; Internship</span>
+                                        <h3 class="exp-role">Android Developer Intern</h3>
+                                        <p class="exp-company">Uptoskills</p>
+                                    </div>
+                                    <div class="exp-meta">
+                                        <span class="exp-duration-pill">Sep 2024 &ndash; Dec 2024</span>
+                                    </div>
+                                </div>
 
-                        <ul class="exp-list">
-                            <li>
-                                <strong>Application &amp; UI Engineering:</strong> Build responsive native screens and reusable UI components using <strong>Kotlin</strong>, <strong>Java</strong>, <strong>Jetpack Compose</strong>, and <strong>XML layouts</strong> with ViewBinding and Material Design components.
-                            </li>
-                            <li>
-                                <strong>Architecture &amp; State Management:</strong> Structure scalable application features using <strong>MVVM</strong> and <strong>Clean Architecture</strong> with ViewModel, LiveData, Kotlin Coroutines, StateFlow/SharedFlow, Navigation Component, and Hilt.
-                            </li>
-                            <li>
-                                <strong>Networking &amp; Real-Time Communication:</strong> Integrate <strong>Retrofit REST APIs</strong>, <strong>Socket.IO</strong> event streams, and <strong>Agora RTC/RTM</strong> SDKs for live status updates and real-time communication.
-                            </li>
-                            <li>
-                                <strong>Maps, Payments &amp; Local Persistence:</strong> Implement location features with <strong>Google Maps SDK</strong>, local persistence with <strong>Room Database</strong>, push notifications via <strong>Firebase Cloud Messaging</strong>, and payment gateway workflows.
-                            </li>
-                            <li>
-                                <strong>Debugging &amp; Cross-Functional Delivery:</strong> Diagnose crashes and performance bottlenecks using Android Studio tools and <strong>Firebase Crashlytics</strong>, collaborating with backend developers, UI/UX designers, and QA teams.
-                            </li>
-                        </ul>
-
-                        <div class="exp-tech-footer">
-                            <span>Kotlin</span>
-                            <span>Java</span>
-                            <span>Jetpack Compose</span>
-                            <span>XML</span>
-                            <span>MVVM</span>
-                            <span>Clean Architecture</span>
-                            <span>Retrofit</span>
-                            <span>Socket.IO</span>
-                            <span>Room</span>
-                            <span>Firebase</span>
-                            <span>Google Maps SDK</span>
-                            <span>Agora RTC/RTM</span>
-                            <span>Hilt</span>
-                            <span>Git</span>
+                                <ul class="exp-list">
+                                    <li>
+                                        <strong>Authentication &amp; Real-Time Data:</strong> Created core features for authentication and real-time data handling, reducing user drop-off by 25% and improving data-loading speed by 40%.
+                                    </li>
+                                    <li>
+                                        <strong>API Integration &amp; Quality:</strong> Connected REST APIs for backend communication and achieved a 99% crash-free rate through debugging and testing.
+                                    </li>
+                                    <li>
+                                        <strong>Team Collaboration:</strong> Partnered with designers and backend developers to align features with business goals in an agile environment.
+                                    </li>
+                                </ul>
+                            </article>
                         </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
