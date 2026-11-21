@@ -7,7 +7,7 @@
  * 4. Interactive Project Category Filtering
  * 5. One-Click Email Copy to Clipboard with Accessible Toast Feedback
  * 6. Resilient Resume PDF Existence Check on HTTP/HTTPS
- * 7. IntersectionObserver Scroll-Reveal Animations (staggered cards, reduced-motion safe)
+ * 7. IntersectionObserver Scroll-Reveal Animations (reversible project cards, reduced-motion safe)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -211,22 +211,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 7. Scroll-Triggered Reveal Animations via IntersectionObserver
-    const revealElements = document.querySelectorAll('.reveal-up');
+    const revealElements = document.querySelectorAll('.reveal-up:not(.project-card)');
+    const projectCardPositions = new WeakMap();
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const projectEnterThreshold = 0.12;
+    const projectExitThreshold = 0.08;
 
-    // Stagger project cards in rows of three
-    document.querySelectorAll('.project-card').forEach((card, index) => {
-        card.style.setProperty('--delay', `${(index % 3) * 0.07}s`);
+    projectCards.forEach((card, index) => {
+        card.style.setProperty('--delay', `${(index % 3) * 0.12}s`);
     });
 
     if (prefersReducedMotion || !('IntersectionObserver' in window)) {
         revealElements.forEach(el => el.classList.add('is-visible'));
+        projectCards.forEach(card => card.classList.add('is-visible'));
     } else {
         const revealObserver = new IntersectionObserver(
             (entries, observer) => {
                 entries.forEach(entry => {
+                    const target = entry.target;
+
+                    if (target.classList.contains('project-card')) {
+                        const previousTop = projectCardPositions.get(target);
+                        const currentTop = entry.boundingClientRect.top;
+                        const isVisible = target.classList.contains('is-visible');
+                        projectCardPositions.set(target, currentTop);
+
+                        if (!isVisible && entry.isIntersecting && entry.intersectionRatio >= projectEnterThreshold) {
+                            target.classList.remove('is-exiting-up', 'is-exiting-down');
+                            target.classList.add('is-visible');
+                        } else if (isVisible && (!entry.isIntersecting || entry.intersectionRatio < projectExitThreshold)) {
+                            const isScrollingDown = previousTop !== undefined && currentTop < previousTop;
+                            target.classList.remove('is-visible');
+                            target.classList.toggle('is-exiting-up', isScrollingDown);
+                            target.classList.toggle('is-exiting-down', !isScrollingDown);
+                        }
+
+                        return;
+                    }
+
                     if (entry.isIntersecting) {
-                        const target = entry.target;
                         target.classList.add('is-visible');
                         observer.unobserve(target);
                         // Once revealed, drop the entrance delay so hover effects stay snappy
@@ -236,11 +259,16 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 root: null,
-                threshold: 0.12,
+                threshold: [0, projectExitThreshold, projectEnterThreshold],
                 rootMargin: '0px 0px -36px 0px'
             }
         );
 
         revealElements.forEach(el => revealObserver.observe(el));
+        projectCards.forEach(card => card.classList.add('is-project-ready'));
+        projectCards.forEach(card => {
+            projectCardPositions.set(card, card.getBoundingClientRect().top);
+            revealObserver.observe(card);
+        });
     }
 });
